@@ -91,7 +91,7 @@ public class A3 {
                         break;
                     //Cadastra o aluno e grava no arquivo binário de persistência...
                     case 2:
-                        gravarAlunos(alunos, entrada, pk, pk2);
+                        gravarAlunos(alunos, entrada);
                         numArray = 0;
                         gravarArquivoBinario(alunos, professores, salas, cursos, numArray);
                         break;
@@ -168,7 +168,7 @@ public class A3 {
         }
     }
 
-    public static int gravarAlunos(ArrayList<Aluno> alunos, Scanner entrada, int pk, int pk2) {
+    public static void gravarAlunos(ArrayList<Aluno> alunos, Scanner entrada) {
         Aluno novoA = new Aluno();
         boolean ok;
 
@@ -204,7 +204,6 @@ public class A3 {
         alunos.add(novoA);
         System.out.println("Aluno cadastrado com sucesso!");
         System.out.println("O número de matrícula do aluno é: " + alunos.get(alunos.size() - 1).getMatricula());
-        return pk;
     }
 
     public static void gravarProfessores(ArrayList<Professor> professores, Scanner entrada) {
